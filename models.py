@@ -30,7 +30,6 @@ def get_user():
 
 db.define_table('posts',
                 Field('content'),
-                # User doing the rating.
                 Field('author', 'reference auth_user', default=get_user)
                 )
 

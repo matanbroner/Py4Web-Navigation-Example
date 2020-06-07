@@ -1,0 +1,58 @@
+<!-- TODO: complete -->
+<div id="main-content">
+    <div class="columns">
+        <div class="column is-2" id="navigation">
+            <!-- Notice route(1), this means switch to page 1 -->
+            <div @click="route(1)" class="navigation-item">
+                Home
+            </div>
+            <!-- Switch to page 2 -->
+            <div @click="route(2)" class="navigation-item">
+                About
+            </div>
+            <!-- Switch to page 3 -->
+            <div @click="route(3)" class="navigation-item">
+                Sample Page
+            </div>
+            <!-- You could easily add N more pages! -->
+        </div>
+        <div id="inner-main-content" class="column">
+            <!-- If page is 1 -->
+            <div v-if="page == 1">
+                <h2 class="title is-2">
+                    Home Page
+                </h2>
+                <button @click="delete_all_posts" id="delete-button" class="button is-danger">
+                    Delete All Posts <i class="fa fa-trash"></i>
+                </button>
+                <div id="new-form" class="level">
+                    <label for="new-form-content">New Post:</label>
+                    <div class="level-left">
+                        <input name="new-form-content" class="input" type="text" v-model="new_post">
+                    </div>
+                    <div class="level-right">
+                        <button @click="create_new_post" class="button is-success">
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box post" v-for="(post, index) in posts">
+                    <strong>Post #{{index}}</strong>
+                    {{post.content}}
+                </div>
+            </div>
+            <!-- If page is 2 -->
+            <div v-if="page == 2">
+                <!-- COMPONENT ADDED HERE -->
+                <about :url="about_url" />
+                <!-- Looks odd... But notice how we are using a component! -->
+            </div>
+            <!-- If page is 3 -->
+            <div v-if="page == 3">
+                <!-- COMPONENT ADDED HERE -->
+                <samplepage />
+                <!-- Another component being used (ie. every page other than home is a component) -->
+            </div>
+        </div>
+    </div>
+</div>

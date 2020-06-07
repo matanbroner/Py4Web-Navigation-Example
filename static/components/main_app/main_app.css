@@ -1,0 +1,45 @@
+/* Ignore all of this if you want, might be useful */
+
+#main-content {
+  height: 100vh;
+  width: 100vw;
+}
+
+#inner-main-content {
+  padding: 50px 200px;
+  text-align: center;
+}
+
+#navigation {
+  background-color: lightgray;
+  height: 100vh;
+  text-align: center;
+}
+
+#navigation > .navigation-item {
+  margin: 20px auto;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#navigation > .navigation-item:hover {
+  color: lightskyblue;
+  transition: 0.1s ease all;
+}
+
+#delete-button {
+  margin: 15px auto;
+}
+
+#new-form {
+  width: 50%;
+  margin: auto;
+}
+
+#about-text {
+  white-space: pre;
+}
+
+.post {
+  margin: 30px auto;
+}
